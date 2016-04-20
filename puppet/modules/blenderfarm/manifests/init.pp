@@ -1,9 +1,9 @@
+include apt
+
+apt::ppa { 'ppa:thomas-schiex/blender': }
+
 class blenderfarm {
-	exec { 'apt-update':
-		command => '/usr/bin/apt-get update -qq',
-	}
 	package { 'blender':
-		require => Exec['apt-update'],
 		ensure => installed,
 	}
 	group { 'networkrender':
@@ -56,4 +56,10 @@ class blenderfarm {
 		hour    => ['8-18'],
 		minute  => '*/1',
 	}
+}
+
+class { 'apt':
+  update => {
+    frequency => 'always',
+    },
 }
