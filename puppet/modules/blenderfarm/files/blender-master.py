@@ -11,4 +11,3 @@ bpy.data.scenes["Scene"].network_render.server_port = 5669
 
 # then
 bpy.ops.render.netclientstart()
-

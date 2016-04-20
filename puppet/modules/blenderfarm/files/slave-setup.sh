@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# This is the initial script run for new nodes on the network to get them set up.
+
 ## Blender and utils install
 sudo apt-get update
 sudo apt-get upgrade -y
@@ -30,4 +32,3 @@ sudo /opt/puppetlabs/bin/puppet config set server jabba-masta-00.knoxschools.ad
 sudo /opt/puppetlabs/bin/puppet agent --waitforcert 20 --test --debug
 # When that's done, restart puppet:
 sudo service puppet restart
-

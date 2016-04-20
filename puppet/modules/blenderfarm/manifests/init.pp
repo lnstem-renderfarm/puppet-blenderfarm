@@ -27,7 +27,7 @@ class blenderfarm {
 		owner => 'networkrender',
 		group => 'networkrender',
 	}
-	
+
 	file { '/home/networkrender/blender-slave.py':
 		require => File['/home/networkrender'],
 		mode => '755',
@@ -57,4 +57,3 @@ class blenderfarm {
 		minute  => '*/1',
 	}
 }
-
