@@ -1,10 +1,9 @@
 
 define blenderfarm::accounts ($uid,$realname,$pass,$sshkeytype,$sshkey) {
-  include accounts::params
 
   # Pull in values from accounts::params
-  $homepath =  $accounts::params::homepath
-  $shell    =  $accounts::params::shell
+  $homepath =  '/home'
+  $shell    =  '/bin/bash'
 
   # Create the user
   user { $title:
