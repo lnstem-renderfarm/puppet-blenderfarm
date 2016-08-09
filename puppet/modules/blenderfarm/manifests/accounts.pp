@@ -21,7 +21,7 @@ define blenderfarm::accounts ($uid,$realname,$pass,$sshkeytype,$sshkey) {
 
   # Create a matching group
   group { $title:
-    gid               => $uid,
+    gid => $uid,
   }
 
   # Ensure the home directory exists with the right permissions

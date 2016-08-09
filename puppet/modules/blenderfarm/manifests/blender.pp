@@ -1,9 +1,10 @@
-include apt
-include blenderfarm::users
-
-apt::ppa { 'ppa:thomas-schiex/blender': }
 
 class blenderfarm::blender {
+  include blenderfarm::users
+  include apt
+
+  apt::ppa { 'ppa:thomas-schiex/blender': }
+
   package { 'blender':
     ensure => installed,
   }
@@ -47,6 +48,6 @@ class blenderfarm::blender {
 
 class { 'apt':
   update => {
-    frequency => 'always',
+    frequency => 'daily',
     },
 }

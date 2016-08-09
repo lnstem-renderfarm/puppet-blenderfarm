@@ -1,7 +1,6 @@
 
-include blenderfarm::accounts
-
 class blenderfarm::users {
+  include blenderfarm::accounts
 
   package { 'zsh':
     ensure => installed,
@@ -24,7 +23,7 @@ class blenderfarm::users {
   }
 
   blenderfarm::accounts { 'awde123':
-    uid        => 3051,
+    uid        => 3123,
     realname   => 'Gregory Croisdale',
     pass       => '$6$DDAXsphF$lfPSKloN6QaB4.Zk7Woidnmu19CDyEtmzr4g4VeabGjuAsSdqxTigQ9taH103MyrMdNERmT07cJ7JibQm/68n/',
     sshkeytype => 'ssh-rsa',

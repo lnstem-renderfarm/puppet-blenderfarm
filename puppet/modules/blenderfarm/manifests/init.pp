@@ -1,1 +1,6 @@
-include blenderfarm::blender
+
+class blenderfarm {
+  include blenderfarm::users
+  include blenderfarm::blender
+  
+}
