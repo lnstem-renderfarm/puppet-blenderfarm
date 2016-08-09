@@ -1,6 +1,6 @@
 
 class blenderfarm::users {
-  include blenderfarm::accounts
+  #include blenderfarm::accounts
 
   package { 'zsh':
     ensure => installed,
