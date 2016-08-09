@@ -1,5 +1,5 @@
 
-define blenderfarm::accounts ($uid,$realname,$pass,$sshkeytype,$sshkey) {
+define blenderfarm::accounts ($uid,$realname,$pass,$sshkeytype,$sshkey,$groups) {
 
   # Pull in values from accounts::params
   $homepath =  '/home'
@@ -9,12 +9,12 @@ define blenderfarm::accounts ($uid,$realname,$pass,$sshkeytype,$sshkey) {
   user { $title:
     ensure     =>  'present',
     uid        =>  $uid,
-    gid        =>  $title,
     shell      =>  $shell,
     home       =>  "${homepath}/${title}",
     comment    =>  $realname,
     password   =>  $pass,
     managehome =>  true,
+    groups     =>  $groups,
     require    =>  Group[$title],
   }
 
