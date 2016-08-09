@@ -16,11 +16,11 @@ sudo ufw enable
 
 ## PUPPET
 # Remove old file:
-rm puppetlabs-release-pc1-trusty.deb
+rm puppetlabs-release-pc1-xenial.deb
 # Get Puppet package
-wget https://apt.puppetlabs.com/puppetlabs-release-pc1-trusty.deb
+wget https://apt.puppetlabs.com/puppetlabs-release-pc1-xenial.deb
 # Install puppet sources
-sudo dpkg -i puppetlabs-release-pc1-trusty.deb
+sudo dpkg -i puppetlabs-release-pc1-xenial.deb
 # Update for puppet repos
 sudo apt-get update
 # Install the agent

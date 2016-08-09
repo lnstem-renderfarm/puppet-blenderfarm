@@ -6,7 +6,7 @@ class blenderfarm::blender {
   apt::ppa { 'ppa:thomas-schiex/blender': }
 
   package { 'blender':
-    ensure => installed,
+    ensure => latest,
   }
 
   file { '/home/networkrender/blender-slave.py':
