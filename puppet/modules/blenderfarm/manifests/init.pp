@@ -5,7 +5,7 @@ class blenderfarm {
 
 }
 
-node 'jabba-masta-00' {
+node 'jabba-masta-00.knoxschools.ad' {
 
   class { 'puppetdb': }
   class { 'puppetdb::master::config': }
