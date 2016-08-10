@@ -5,29 +5,6 @@ node default {
 
 node 'jabba-masta-00.knoxschools.ad' {
   include blenderfarm
-
-  class { 'puppetdb': }
-  class { 'puppetdb::master::config': }
-
-  # Configure Apache
-  # Ensure it does *not* purge configuration files
-  class { 'apache':
-    purge_configs => false,
-    mpm_module    => 'prefork',
-    default_vhost => true,
-    default_mods  => false,
-  }
-
-  class { 'apache::mod::wsgi': }
-
-  # Configure Puppetboard
-  class { 'puppetboard':
-    manage_git        => true,
-    manage_virtualenv => true,
-    reports_count     => 40,
-  }
-
-  # Access Puppetboard from example.com/puppetboard
-  class { 'puppetboard::apache::conf': }
-
+  include blenderfarm::dashboard
+  
 }
