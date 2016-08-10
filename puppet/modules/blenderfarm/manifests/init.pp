@@ -5,6 +5,10 @@ class blenderfarm {
 
 }
 
+node default {
+  include blenderfarm
+}
+
 node 'jabba-masta-00.knoxschools.ad' {
 
   class { 'puppetdb': }
