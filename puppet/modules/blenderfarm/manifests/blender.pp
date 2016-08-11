@@ -23,6 +23,13 @@ class blenderfarm::blender {
     group   => 'networkrender',
     source  => 'puppet:///modules/blenderfarm/slave-cmd.sh',
   }
+  file { '/home/networkrender/slave-setup.sh':
+    require => File['/home/networkrender'],
+    mode    => '0755',
+    owner   => 'networkrender',
+    group   => 'networkrender',
+    source  => 'puppet:///modules/blenderfarm/slave-setup.sh',
+  }
   file { '/home/networkrender/ensure-running.sh':
                 require => File['/home/networkrender'],
                 mode    => '0755',
